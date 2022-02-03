@@ -1,6 +1,6 @@
 # linux-rice
 
-###Programs used:
+### Programs used:
  - pcmanfm-qt
  - firefox
  - qterminal
