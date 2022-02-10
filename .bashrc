@@ -16,12 +16,12 @@ _set_my_PS1() {
             local iso_info="$prefix$iso_version"
             PS1="[\u@$iso_info \W]\$ "
         fi
+    else
+        parse_git_branch() {
+        	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+        }
+        PS1="\u@\[\033[35m\]\h \[\e[32m\]\w \[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "
     fi
-
-    parse_git_branch() {
-    	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-    }
-    PS1="\u@\[\033[35m\]\h \[\e[32m\]\w \[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "
 }
 _set_my_PS1
 unset -f _set_my_PS1
