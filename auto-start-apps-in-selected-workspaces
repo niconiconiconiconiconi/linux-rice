@@ -1,0 +1,14 @@
+#! /bin/bash
+
+# only works for xfce DE
+
+firefox &
+wait
+chromium &
+wait
+code &
+wait
+mongodb-compass &
+wait
+wmctrl -i -r code -t 2
+wmctrl -i -r mongodb-compass -t 4
